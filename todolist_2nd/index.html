@@ -12,20 +12,18 @@
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
   </head>
-
-
   <body>
     <!-- html 마크업 <- semantic tag -->
     <header class="header">
       <h1 class="header__logo">To Do List</h1>
     </header>
     <nav class="options">
-      <button class="ooptions__today">오늘만 보기</button>
-      <button class="options__tomorrow">내일만 보기</button>
-      <button class="options__both">함께 보기</button>
+      <button class="options__btn options__today">오늘만 보기</button>
+      <button class="options__btn options__tomorrow">내일만 보기</button>
+      <button class="options__btn options__both">함께 보기</button>
     </nav>
     <main class="todos">
-      <section class="todos__today open">
+      <section class="todos__today">
         <h2 class="todos__header">오늘 할 일</h2>
         <ul class="todos__items">
           <li class="todos__item">
@@ -42,31 +40,31 @@
           </li>
         </ul>
         <input class="todos__input" type="text" />
-        <div class="todos__btn-container">
-          <button class="todos__btn">
+        <div class="todos__btn-wrapper">
+          <button class="todos__add">
             <i class="fas fa-plus-circle"></i>
           </button>
         </div>
       </section>
-      <section class="todos__tomorrow open">
+      <section class="todos__tomorrow">
         <h2 class="todos__header">내일 할 일</h2>
         <ul class="todos__items">
           <li class="todos__item">
-            <div class="todos__name">큰일났다 디자인리서치</div>
+            <span class="todos__name">큰일났다 디자인리서치</span>
             <button class="todos__delete">
                 <i class="fas fa-trash-alt"></i>
             </button>
           </li>
           <li class="todos__item">
-            <div class="todos__name">대체 언제읽지 책은</div>
+            <span class="todos__name">대체 언제읽지 책은</span>
             <button class="todos__delete">
                 <i class="fas fa-trash-alt"></i>
             </button>
           </li>
         </ul>
         <input class="todos__input" type="text" />
-        <div class="todos__btn-container">
-          <button class="todos__btn">
+        <div class="todos__btn-wrapper">
+          <button class="todos__add">
             <i class="fas fa-plus-circle"></i>
           </button>
         </div>
