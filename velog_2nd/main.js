@@ -53,18 +53,3 @@ cardContainer.addEventListener("click", (e) => {
         document.body.style.overflow = "visible";
     });
 });
-
-const tagBox = document.querySelector (".form__tag");
-const inputTag = document.querySelector(".form__input-tag");
-let whatTags =[;
-
-const deleteTag = (e) =>{
-    let targetTag = e.target;
-
-    for(let i=0; i<whatTags.length; i++){
-        if(whatTags[i] === e.target.innerText){
-            whatTags.splice(i,1);
-            i--;
-        }
-    }
-}
