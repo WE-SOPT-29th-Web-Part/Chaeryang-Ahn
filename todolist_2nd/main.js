@@ -12,39 +12,69 @@
 //input.todos__input, todos__add, .todoes__items
 
 //DOM 요소를 가져오는 방법
-const input = document.querySelector(".todos__input");
-const addBtn = document.querySelector(".todos__add");
-const items = document.querySelector(".todos__items");
+const inputs = document.querySelectorAll(".todos__input");
+const addBtns = document.querySelectorAll(".todos__add");
+const allItems = document.querySelectorAll(".todos__items");
 
-addBtn.addEventListener('click', function(){
-    console.log('input.value',input.value);
-    const li=document.createElement("li");
-    const div=document.createElement("div");
-    const deleteBtn=document.setAttribute("class", "todos__delete");
+addBtns.forEach((btn, index) =>
+  btn.addEventListener("click", () => {
+    onAdd(index);
+  })
+);
+//태그를 만드는 과정
+console.log("addBtns");
 
-    //태그를 만드는 과정
+inputs.forEach((input, index) =>
+  input.addEventListener("keyup", (event) => {
+    //엔터치면 추가되게 하기
+    if (event.key === "Enter") {
+      onAdd(index);
+    }
+  })
+);
+//여기까진 이해됬어여
 
-    li.setAttribute("class, "todos__item");
-    span.setAttribute("class", "todos__name");
-    deleteBtn.setAttribute("class", "todos__delete");
+const onAdd = (index) => {
+  if (!inputs[index].value) return;
+  const li = document.createElement("li");
+  //   <li></li>
+  const span = document.createElement("span");
+  //   <span></span>
+  const deleteBtn = document.createElement("button");
 
+  li.setAttribute("class", "todos__item");
+  span.setAttribute("class", "todos__name");
+  deleteBtn.setAttribute("class", "todos__delete");
 
-    deleteBtn.innerText = "X";
+  //여기 설명이 필요해요...
 
-    items.appentChild(li);
-    li.appendChild(span);
-    li.appendChild(deleteBtn);
+  deleteBtn.innerText = "X";
+  span.innerText = inputs[index].value;
 
-    input.value=" ";
+  allItems[index].appendChild(li);
+  li.appendChild(span);
+  li.appendChild(deleteBtn);
 
-    
+  inputs[index].value = " ";
+
+  //삭제
+  deleteBtn.addEventListener("click", () => {
+    li.remove();
+  });
+};
+
+const nav = document.querySelector(".options");
+const todos = document.querySelectorAll(".todos > section");
+
+nav.addEventListener("click", (event) => {
+  if (event.target.className.includes("options__today")) {
+    todos[0].classList.add("open");
+    todos[1].classList.remove("open");
+  } else if (event.target.className.includes("options__tomorrow")) {
+    todos[0].classList.remove("open");
+    todos[1].classList.add("open");
+  } else if (event.target.className.includes("options__both")) {
+    todos[1].classList.add("open");
+    todos[0].classList.add("open");
+  }
 });
-//2. enter 키보드 키를 눌렀을 때 list가 추가되도록 =>addBtn을 누르는 과정과 동일
-input.addEventListener('keyup',() =>{
-    console.log ('event', event.key);
-    if (event.key === "Enter"){
-
-    }28
-    console.log('scroll');
-
-})
