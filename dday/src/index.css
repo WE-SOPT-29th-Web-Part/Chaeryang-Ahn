@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  width :100%;
+  height:100%;
+}
+
+#app{
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 15px 5px pink;
+  width:500px;
+  height:500px;
+}
+
+#dateInput{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#input{
+  width:50px;
+}
+
+#centerText{
+  width: 100%;
+  background-color: palevioletred;
+  color: white;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+
+.text {
+  display:flex;
+  width:100%;
+  justify-content: space-between;
+}
+
+/* #result{
+  margin-right:auto;
+
+} */
+#result{
+  width:100%;
+}
